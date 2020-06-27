@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 
+import history from '../../pages/history'
+
 const Wrapper = styled.div`
 	position: fixed;
 	z-index: 500;
@@ -41,9 +43,9 @@ const Menu = ({status}) => {
 	return (
 		<Wrapper open={status}>
 			<Container>
-				<Heading href='#' highlight>COVID-19</Heading>
-				<Heading href='#'>GLOBAL STATISTICS</Heading>
-				<Heading href='#'>ABOUT</Heading>
+				<Heading href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen' highlight>COVID-19</Heading>
+				<Heading href='' onClick={()=>history.push('/global-stats')}>GLOBAL STATISTICS</Heading>
+				<Heading href='' onClick={()=>history.push('/about')}>ABOUT</Heading>
 			</Container>
 		</Wrapper>
 	)

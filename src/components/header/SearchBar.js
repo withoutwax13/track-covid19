@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+
+import { setGlobeFocus } from '../../redux/actions'
 
 const StyledInput = styled.input`
-	height: 30px;
+	height: 25px;
 	width: 300px;
 	border-radius: 10px;
 	border: 1px solid silver;
+	margin-top: 2px;
 
 	outline: none;
 	&:hover {
@@ -46,8 +50,26 @@ const StyledInput = styled.input`
 	}	
 `
 
-export default ({children}) => {
+const SearchBar = ({children, setGlobeFocus}) => {
+
+	const [ searchInput, setSearchInput ] = React.useState('')
+
 	return (
-		<StyledInput type='text' placeholder={children}/>
+		<form 
+			onSubmit={e=>{
+				e.preventDefault()
+				setGlobeFocus(searchInput)
+				setSearchInput('')
+			}}
+		>
+			<StyledInput 
+					type='text' 
+					placeholder={children} 
+					onChange={e=>setSearchInput(e.target.value)} 
+					value={searchInput}
+			/>
+		</form>
 	)
 }
+
+export default connect(null, { setGlobeFocus })(SearchBar)

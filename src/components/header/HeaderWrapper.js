@@ -5,8 +5,11 @@ const HeaderWrapper = styled.div`
 	flex-direction: row;
 
 	justify-content: space-between;
-
-	margin: 0 20px 0 0;
+	
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	margin: 0 10px 0 0;
 	padding: 1.0em;
 	background-color: white;
 

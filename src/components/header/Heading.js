@@ -6,7 +6,7 @@ const StyledHeading = styled.a`
 	font-weight: bold;
 	margin: 5px 0;
 	text-decoration: none;
-	color: black;
+	color: ${(props)=> props.beHighlight ? `red` : `black`};
 
 
 	  ##Device = Tablets, Ipads (portrait)
@@ -53,9 +53,9 @@ const StyledHeading = styled.a`
 	}
 `
 
-const Heading = ({children, path}) => {
+const Heading = ({children, highlight, onClick, href}) => {
 	return (
-		<StyledHeading href={path}>
+		<StyledHeading href={href ? href : ``} beHighlight={highlight} onClick={onClick ? ()=>onClick() : null}>
 			{children}
 		</StyledHeading>
 	)

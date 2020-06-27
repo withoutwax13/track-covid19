@@ -1,42 +1,52 @@
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+	
+	padding: 20px 0;
+
     @media (min-width: 1281px) {
-    
-      display: flex;
-      flex-direction: row;
+
+    	margin: auto 40px;
+    	height: 100vh;
     
     }
 
     @media (min-width: 1025px) and (max-width: 1280px) {
-    
-      display: flex;
-      flex-direction: row;
+
+    	margin: auto 40px;
+    	height: 100vh;  
     
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-    
-      display: flex;
-      flex-direction: row;
+    	
+    	padding: 10px 0;
+    	margin: 5% auto;
+    	height: 80vh;
     
     }
 
     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     
-      display: flex;
-      flex-direction: row;
+      	margin: 10% auto;
+      	height: 80vh;
     
     }
 
 
     @media (min-width: 481px) and (max-width: 767px) {
     
-      display: flex;
-      flex-direction: column;
+     	margin: 10% auto;
+     	height: 80vh;
     
     }
 
     @media (min-width: 320px) and (max-width: 480px) {
     
-      display: flex;
-      flex-direction: column;
+      	margin: 10% auto;
+      	height: 80vh;
     
     }
+`
+
+export default Wrapper

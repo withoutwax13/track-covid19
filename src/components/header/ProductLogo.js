@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
 	font-family: courier new;
 	font-size: 2.0em;
 	font-weight: bold;
+	text-decoration: none;
+	color: black;
 `
 
-const ProductLogo = ({children}) => {
+const ProductLogo = ({children, onClick}) => {
 	return (
-		<Wrapper>
+		<Wrapper href='' onClick={()=>onClick()}>
 			{children}
 		</Wrapper>
 	)

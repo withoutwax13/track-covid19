@@ -23,7 +23,7 @@ const BurgerMenu = ({status, toggleMenu}) => {
 		return (
 			<React.Fragment>
 				<CloseMenu>
-					<h3 style={{margin: '0', fontSize: '2.0em', fontWeight: 'bold'}} status={status}>+</h3>
+					<h3 style={{margin: '0', fontSize: '2.0em', fontWeight: 'bold'}}>+</h3>
 				</CloseMenu>
 			</React.Fragment>
 		)

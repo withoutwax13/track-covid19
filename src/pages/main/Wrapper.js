@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.main`
+
 	display: flex;
+	
 	/* 
 	  ##Device = Desktops
 	  ##Screen = 1281px to higher resolution desktops
@@ -10,6 +12,7 @@ const Wrapper = styled.main`
 	@media (min-width: 1281px) {
 	  
 	  flex-direction: row;
+	  margin: 3% 5%;
 	  
 	}
 
@@ -21,6 +24,7 @@ const Wrapper = styled.main`
 	@media (min-width: 1025px) and (max-width: 1280px) {
 	  
 	  flex-direction: row;
+	  margin: 3% 5%;
 	  
 	}
 
@@ -32,6 +36,7 @@ const Wrapper = styled.main`
 	@media (min-width: 768px) and (max-width: 1024px) {
 	  
 	  flex-direction: column;
+	  margin: 5%;
 	  
 	}
 
@@ -43,6 +48,7 @@ const Wrapper = styled.main`
 	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	  
 	  flex-direction: column;
+	  margin: 5%;
 	  
 	}
 
@@ -54,6 +60,7 @@ const Wrapper = styled.main`
 	@media (min-width: 481px) and (max-width: 767px) {
 	  
 	  flex-direction: column;
+	  margin: 5%;
 	  
 	}
 
@@ -65,6 +72,7 @@ const Wrapper = styled.main`
 	@media (min-width: 320px) and (max-width: 480px) {
 	  
 	  flex-direction: column;
+	  margin: 5%;
 	  
 	}
 `
