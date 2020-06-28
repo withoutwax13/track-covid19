@@ -7,3 +7,5 @@ export const globeFocusReducer_INITIAL = {
 												lng: 0
 											}
 										}
+
+export const confirmedCasesReducer_INITIAL = []

@@ -1,3 +1,4 @@
 export const TOGGLE_MENU = 'TOGGLE_MENU'
 export const DATA_SUMMARY = 'SUMMARY_DATA' 
 export const SET_GLOBE_FOCUS = 'SET_GLOBE_FOCUS'
+export const CONFIRMED_CASES = 'CONFIRMED_CASES'

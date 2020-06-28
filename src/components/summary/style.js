@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
 	flex-direction: column;
 	border: ${(props)=>props.inactive ? `none` : `1px solid silver`};
 	border-radius: 10px;
-	width: 400px;
-	margin: 10px auto;
+	width: 200px;
+	margin: 10px 10px;
 	padding: 10px;
 
 `

@@ -3,10 +3,11 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
+import { countriesData as countries } from '../../api/countries'
 import { setGlobeFocus } from '../../redux/actions'
 import SearchBarWrapper from './SearchBarWrapper.js'
 
-const Input = styled.input`
+const Select = styled.select`
 	height: 25px;
 	width: 400px;
 	border-radius: 10px;
@@ -20,25 +21,25 @@ const Input = styled.input`
 
 const SearchBar = ({children, setGlobeFocus}) => {
 
-	const [ searchInput, setSearchInput ] = React.useState('')
+	const [ search, setSearch ] = React.useState('')
+	React.useEffect(()=>{
+		if(search){
+			setGlobeFocus(search)
+			setSearch('')
+		}
+	}, [search])
 
 	return (
 		<SearchBarWrapper>
-			<form 
-				onSubmit={e=>{
-					e.preventDefault()
-					setGlobeFocus(searchInput)
-					setSearchInput('')
-				}}
-				style={{margin: '2px auto 2px auto'}}
+			<Select 
+					name='countries'
+					id='country-select'
+					onChange={e=>setSearch(e.target.value)} 
+					value={search}
 			>
-				<Input 
-						type='text' 
-						placeholder={children} 
-						onChange={e=>setSearchInput(e.target.value)} 
-						value={searchInput}
-				/>
-			</form>
+				<option value=''>--Select a country--</option>
+				{countries.map(country=><option value={country.name} key={country.country}>{country.name}</option>)}
+			</Select>
 		</SearchBarWrapper>
 	)
 }

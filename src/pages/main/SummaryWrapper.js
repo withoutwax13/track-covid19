@@ -2,33 +2,33 @@ import styled from 'styled-components'
 
 const SummaryWrapper = styled.div`
     
-      margin: 0 auto;
+      margin: 20px auto;
 
 	@media (min-width: 1281px) {
     
     	display: flex;
-    	flex-direction: column;
+    	flex-direction: row;
     
   	}
 
   	@media (min-width: 1025px) and (max-width: 1280px) {
     
     	display: flex;
-    	flex-direction: column;
+    	flex-direction: row;
     
   	}
 
   	@media (min-width: 768px) and (max-width: 1024px) {
     
     	display: flex;
-    	flex-direction: column;
+    	flex-direction: row;
     
   	}
 
   	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     
     	display: flex;
-    	flex-direction: column;
+    	flex-direction: row;
     
   	}
 

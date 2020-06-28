@@ -10,8 +10,7 @@ import Menu from './components/menu'
 
 import history from './pages/history'
 import Home from './pages/main'
-import CountryStats from './pages/countryStats'
-import GlobalStats from './pages/globalStats'
+import Dashboard from './pages/dashboard'
 import About from './pages/about'
 
 const App = ({fetchDataSummary}) => {
@@ -31,8 +30,7 @@ const App = ({fetchDataSummary}) => {
 				<Switch>
 					<Route exact path='/' component={Home}/>
 					<Route exact path='/about' component={About}/>
-					<Route exact path='/global-stats' component={GlobalStats}/>
-					<Route exact path='/country-stats/:id' component={CountryStats}/>
+					<Route exact path='/dashboard' component={Dashboard}/>
 					<Route component={Home}/>
 				</Switch>
 			</Router>

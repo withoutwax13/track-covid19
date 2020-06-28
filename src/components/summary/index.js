@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 
 import Loading from '../loading'
 
-import { Wrapper } from './style'
-
 import LocalSummaryData from './LocalSummaryData'
 import GlobalSummaryData from './GlobalSummaryData'
 
@@ -29,7 +27,7 @@ class SummaryBox extends React.Component {
 
 	Loading = () => {
 		return (
-			<Loading/>
+			<Loading />
 		)
 	}
 

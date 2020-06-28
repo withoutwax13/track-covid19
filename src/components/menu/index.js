@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 
 import history from '../../pages/history'
+import { toggleMenu } from '../../redux/actions'
+import { StyledNavLinkHeading, StyledNavHeading } from './Heading'
 
 const Wrapper = styled.div`
 	position: fixed;
@@ -32,20 +34,14 @@ const Container = styled.div`
 
 `
 
-const Heading = styled.a`
-	text-decoration: none;
-	color: ${(props)=>props.highlight ? `red` : `white`};
-	font-size: 2.0em;
-	margin: 20px auto;
-`
 
-const Menu = ({status}) => {
+const Menu = ({status, toggleMenu}) => {
 	return (
 		<Wrapper open={status}>
 			<Container>
-				<Heading href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen' highlight>COVID-19</Heading>
-				<Heading href='' onClick={()=>history.push('/global-stats')}>GLOBAL STATISTICS</Heading>
-				<Heading href='' onClick={()=>history.push('/about')}>ABOUT</Heading>
+				<StyledNavHeading href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen' color='red' onClick={()=>toggleMenu(!status)}>COVID-19</StyledNavHeading>
+				<StyledNavLinkHeading to='/dashboard' color='white' onClick={()=>toggleMenu(!status)}>DASHBOARD</StyledNavLinkHeading>
+				<StyledNavLinkHeading to='/about' color='white' onClick={()=>toggleMenu(!status)}>ABOUT</StyledNavLinkHeading>
 			</Container>
 		</Wrapper>
 	)
@@ -57,4 +53,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(Menu)
+export default connect(mapStateToProps, { toggleMenu })(Menu)

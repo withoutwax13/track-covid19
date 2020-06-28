@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import { TOGGLE_MENU, DATA_SUMMARY, SET_GLOBE_FOCUS } from '../actionTypes'
-import { menuReducer_INITIAL, dataSummaryReducer_INITIAL, globeFocusReducer_INITIAL } from './INITIAL_STATE'
+import { menuReducer_INITIAL, dataSummaryReducer_INITIAL, globeFocusReducer_INITIAL, confirmedCasesReducer_INITIAL } from './INITIAL_STATE'
 
 const menuReducer = (isOpen = menuReducer_INITIAL, action) => {
 	switch(action.type){
@@ -30,8 +30,18 @@ const globeFocusReducer = (focus = globeFocusReducer_INITIAL, action) => {
 	}
 }
 
+const confirmedCasesReducer = (cases = confirmedCasesReducer_INITIAL, action) => {
+	switch(action.type){
+		case 'CONFIRMED_CASES':
+			return action.payload
+		default:
+			return cases
+	}
+}
+
 export default combineReducers({
 	menuStatus: menuReducer,
 	dataSummary: dataSummaryReducer,
-	globeFocus: globeFocusReducer
+	globeFocus: globeFocusReducer,
+	confirmedCases: confirmedCasesReducer
 })

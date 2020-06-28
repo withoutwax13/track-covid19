@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 
 import { setGlobeFocus } from '../../redux/actions'
+import { countriesData as countries } from '../../api/countries'
 
-const StyledInput = styled.input`
+const Select = styled.select`
 	height: 25px;
 	width: 300px;
 	border-radius: 10px;
@@ -52,23 +53,24 @@ const StyledInput = styled.input`
 
 const SearchBar = ({children, setGlobeFocus}) => {
 
-	const [ searchInput, setSearchInput ] = React.useState('')
+	const [ search, setSearch ] = React.useState('')
+	React.useEffect(()=>{
+		if(search){
+			setGlobeFocus(search)
+			setSearch('')
+		}
+	}, [search])
 
 	return (
-		<form 
-			onSubmit={e=>{
-				e.preventDefault()
-				setGlobeFocus(searchInput)
-				setSearchInput('')
-			}}
+		<Select 
+				name='countries'
+				id='country-select'
+				onChange={e=>setSearch(e.target.value)} 
+				value={search}
 		>
-			<StyledInput 
-					type='text' 
-					placeholder={children} 
-					onChange={e=>setSearchInput(e.target.value)} 
-					value={searchInput}
-			/>
-		</form>
+			<option value=''>--Select a country--</option>
+			{countries.map(country=><option value={country.name} key={country.country}>{country.name}</option>)}
+		</Select>
 	)
 }
 

@@ -711,13 +711,13 @@ export const countriesData = [
    "country": "KP",
    "lat": 40.339852,
    "lng": 127.510093,
-   "name": "North Korea"
+   "name": "Korea North"
  },
  {
    "country": "KR",
    "lat": 35.907757,
    "lng": 127.766922,
-   "name": "South Korea"
+   "name": "Korea South"
  },
  {
    "country": "KW",

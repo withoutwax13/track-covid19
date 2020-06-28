@@ -17,8 +17,6 @@ const GlobalSummaryData = ({summary}) => {
 				<Data>{summary.Global.TotalDeaths}</Data>
 			<Label>Total Recovered</Label>
 				<Data>{summary.Global.TotalRecovered}</Data>
-
-			<Button>Global Charts</Button>
 		</Wrapper>
 	)
 }

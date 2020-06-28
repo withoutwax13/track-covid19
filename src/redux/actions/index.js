@@ -1,5 +1,6 @@
-import { TOGGLE_MENU, DATA_SUMMARY, SET_GLOBE_FOCUS } from '../actionTypes'
+import { TOGGLE_MENU, DATA_SUMMARY, SET_GLOBE_FOCUS, CONFIRMED_CASES } from '../actionTypes'
 import { countriesData as countries } from '../../api/countries'
+import api from '../../api/api'
 
 export const toggleMenu = (toOpen) => {
 	return {
@@ -7,12 +8,21 @@ export const toggleMenu = (toOpen) => {
 		payload: toOpen
 	}
 }
-
+	
 export const fetchDataSummary = (summaryData) => {
 	return {
 		type: DATA_SUMMARY,
 		payload: summaryData
 	}
+}
+
+export const fetchConfirmedRecords = (countrySlug, startDate, endDate) => async dispatch => {
+	await api
+		.get(`country/${countrySlug}/status/confirmed/live?from=${startDate.year}-${startDate.month}-${startDate.day}T00:00:00Z&to=${endDate.year}-${endDate.month}-${endDate.day}T00:00:00Z`)
+		.then((response)=>{
+			console.log(response.data)
+			dispatch({type: CONFIRMED_CASES, payload: response.data})
+		})
 }
 
 export const setGlobeFocus = (country) => {

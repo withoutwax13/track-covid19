@@ -28,8 +28,6 @@ const LocalSummaryData = ({summary, focus, loadingLocal, shouldFocus}) => {
 					<Data>{localData.TotalDeaths && localData.TotalDeaths !== 0 ? localData.TotalDeaths : `N/A`}</Data>
 				<Label>Total Recovered</Label>
 					<Data>{localData.TotalRecovered && localData.TotalRecovered !== 0 ? localData.TotalRecovered : `N/A`}</Data>
-
-				<Button>Local Charts</Button>
 			</Wrapper>
 		)
 	}else{
