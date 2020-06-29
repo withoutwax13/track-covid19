@@ -5,6 +5,11 @@ const CloseMenu = styled.div`
 	width: 30px;
 	margin: 6px 6px 6px 0;
 	transform: ${(props)=>props.status === true ? `rotate(0)` : `rotate(45deg)`};
+	-moz-user-select: none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+   	-ms-user-select: none;
+   	user-select: none;
 
 	/* 
 	  ##Device = Desktops

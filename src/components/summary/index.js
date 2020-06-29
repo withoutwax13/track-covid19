@@ -16,6 +16,12 @@ class SummaryBox extends React.Component {
 		}
 	}
 
+	componentDidMount(){
+		if(this.props.summary){
+			this.setState({ loadingGlobal: false })
+		}
+	}
+
 	componentDidUpdate(prevProps){
 		if(this.props.summary !== prevProps.summary){
 			this.setState({ loadingGlobal: false })

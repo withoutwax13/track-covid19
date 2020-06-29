@@ -8,7 +8,7 @@ import { StyledNavLinkHeading, StyledNavHeading } from './Heading'
 const Wrapper = styled.div`
 	position: fixed;
 	z-index: 500;
-	transform: ${(props)=>props.open === true ? `translateX(0)` : `translateX(100%)`};
+	transform: ${(props)=>props.open === true ? `translateX(0)` : `translateX(-100%)`};
 
 	@media (min-width: 1281px) {
     
