@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Label, Data, Button } from './style'
+import { Wrapper, Label, Data } from './style'
 
 const GlobalSummaryData = ({summary}) => {
 	return (

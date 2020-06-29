@@ -20,7 +20,6 @@ export const fetchConfirmedRecords = (countrySlug, startDate, endDate) => async 
 	await api
 		.get(`country/${countrySlug}/status/confirmed/live?from=${startDate.year}-${startDate.month}-${startDate.day}T00:00:00Z&to=${endDate.year}-${endDate.month}-${endDate.day}T00:00:00Z`)
 		.then((response)=>{
-			console.log(response.data)
 			dispatch({type: CONFIRMED_CASES, payload: response.data})
 		})
 }

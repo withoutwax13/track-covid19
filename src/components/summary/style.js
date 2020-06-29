@@ -41,8 +41,3 @@ export const Data = ({children}) => {
 		</Wrapper>
 	)
 }
-
-export const Button = styled.button`
-	border: none;
-	background-color: white;
-`

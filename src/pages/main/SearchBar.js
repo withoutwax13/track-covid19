@@ -27,7 +27,7 @@ const SearchBar = ({children, setGlobeFocus}) => {
 			setGlobeFocus(search)
 			setSearch('')
 		}
-	}, [search])
+	}, [search, setGlobeFocus])
 
 	return (
 		<SearchBarWrapper>

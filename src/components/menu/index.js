@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 
-import history from '../../pages/history'
 import { toggleMenu } from '../../redux/actions'
 import { StyledNavLinkHeading, StyledNavHeading } from './Heading'
 
@@ -41,7 +40,6 @@ const Menu = ({status, toggleMenu}) => {
 			<Container>
 				<StyledNavHeading href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/events-as-they-happen' color='red' onClick={()=>toggleMenu(!status)}>COVID-19</StyledNavHeading>
 				<StyledNavLinkHeading to='/dashboard' color='white' onClick={()=>toggleMenu(!status)}>DASHBOARD</StyledNavLinkHeading>
-				<StyledNavLinkHeading to='/about' color='white' onClick={()=>toggleMenu(!status)}>ABOUT</StyledNavLinkHeading>
 			</Container>
 		</Wrapper>
 	)

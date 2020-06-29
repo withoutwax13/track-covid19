@@ -7,7 +7,7 @@ import { countriesData as countries } from '../../api/countries'
 
 const Select = styled.select`
 	height: 25px;
-	width: 300px;
+	width: 400px;
 	border-radius: 10px;
 	border: 1px solid silver;
 	margin-top: 2px;
@@ -59,7 +59,7 @@ const SearchBar = ({children, setGlobeFocus}) => {
 			setGlobeFocus(search)
 			setSearch('')
 		}
-	}, [search])
+	}, [search, setGlobeFocus])
 
 	return (
 		<Select 

@@ -160,6 +160,6 @@ export const FilterSelect = styled.select`
 	border: 1px solid gray;
 `
 
-export const Heading = styled.h4`
+export const Heading = styled.h3`
 	margin: 20px 15px auto 15px;
 `

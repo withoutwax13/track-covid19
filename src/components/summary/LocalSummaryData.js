@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Wrapper, Label, Data, Button } from './style'
+import { Wrapper, Label, Data } from './style'
 
 const LocalSummaryData = ({summary, focus, loadingLocal, shouldFocus}) => {
 
