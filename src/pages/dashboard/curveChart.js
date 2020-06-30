@@ -12,9 +12,11 @@ const CurveChart = ({fetchConfirmedRecords, summary, focus, confirmedCases}) => 
 	const [ dataFilter, setDataFilter ] = React.useState('')
 	const [ countryName, setCountryName ] = React.useState('')
 
+	let chartData = processData(confirmedCases)
+
 	React.useEffect(()=>{
 		if(focus) { setCountryName(focus.name.split('').map(char => char === '-' ? ' ' : char).join('').toUpperCase()) }
-		if(dataFilter && focus){
+		if(dataFilter && focus && summary){
 			let slug = focus.name
 			const { startDate, endDate } = getStartEndDates(dataFilter, summary)
 			fetchConfirmedRecords(slug, startDate, endDate)
@@ -32,7 +34,7 @@ const CurveChart = ({fetchConfirmedRecords, summary, focus, confirmedCases}) => 
 				<Heading>{countryName}</Heading>
 				<Filter handleFilterChange={getFilter}/>
 			</FilterWrapper>
-			<LineChart width={1150} height={400} data={processData(confirmedCases)}
+			<LineChart width={1150} height={400} data={chartData}
 			  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
 			  <CartesianGrid strokeDasharray="3 3" />
 			  <XAxis dataKey="Date" />
