@@ -57,9 +57,9 @@ const mapStateToProps = (state) => {
 
 CurveChart.propTypes = {
 	fetchConfirmedRecords: PropTypes.func.isRequired,
-	summary: PropTypes.object.isRequired,
-	focus: PropTypes.object.isRequired,
-	confirmedCases: PropTypes.array.isRequired
+	summary: PropTypes.object,
+	focus: PropTypes.object,
+	confirmedCases: PropTypes.array
 }
 
 export default connect(mapStateToProps, { fetchConfirmedRecords })(CurveChart)

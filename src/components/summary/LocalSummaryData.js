@@ -38,7 +38,7 @@ const LocalSummaryData = ({summary, focus, loadingLocal, shouldFocus}) => {
 }
 
 LocalSummaryData.propTypes = {
-	summary: PropTypes.object.isRequired,
+	summary: PropTypes.object,
 	focus: PropTypes.object.isRequired,
 	loadingLocal: PropTypes.bool.isRequired,
 	shouldFocus: PropTypes.bool

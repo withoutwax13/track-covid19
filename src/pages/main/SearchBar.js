@@ -46,7 +46,7 @@ const SearchBar = ({children, setGlobeFocus}) => {
 
 SearchBar.propTypes = {
 	setGlobeFocus: PropTypes.func.isRequired,
-	children: PropTypes.node.isRequired
+	children: PropTypes.node
 }
 
 export default connect(null, { setGlobeFocus })(SearchBar)

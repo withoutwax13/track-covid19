@@ -63,7 +63,7 @@ const mapStateToProps = (state) => {
 }
 
 SummaryBox.propTypes = {
-	summary: PropTypes.object.isRequired,
+	summary: PropTypes.object,
 	focus: PropTypes.object.isRequired
 }
 

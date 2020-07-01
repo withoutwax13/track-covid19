@@ -6,15 +6,28 @@ export const getStartEndDates = (dataFilter, summary) => {
 	let endDate = {year: '', month: '', day: ''}
 	switch(dataFilter){
 				case 'thisMonth':
-					endDate = {
-						year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
-						month: `${summary.Date[5]}${summary.Date[6]}`,
-						day: `${summary.Date[8]}${summary.Date[9]}`
-					}
-					startDate = {
-						year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
-						month: `${summary.Date[5]}${summary.Date[6]}`,
-						day: `01`
+					if (`${summary.Date[8]}${summary.Date[9]}` !== `01`){
+						endDate = {
+							year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
+							month: `${summary.Date[5]}${summary.Date[6]}`,
+							day: `${summary.Date[8]}${summary.Date[9]}`
+						}
+						startDate = {
+							year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
+							month: `${summary.Date[5]}${summary.Date[6]}`,
+							day: `01`
+						}
+					} else {
+						endDate = {
+							year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
+							month: `${summary.Date[5]}${summary.Date[6]}`,
+							day: `${summary.Date[8]}${summary.Date[9]}`
+						}
+						startDate = {
+							year: `${summary.Date[0]}${summary.Date[1]}${summary.Date[2]}${summary.Date[3]}`,
+							month: `${summary.Date[5]}${Number(`${summary.Date[6]}`) - 1}`,
+							day: `01`
+						}
 					}
 					break
 				case 'lastMonth':
@@ -110,10 +123,10 @@ export const processData = (confirmedCases) => {
 }
 
 getStartEndDates.propTypes = {
-	dataFilter: PropTypes.string.isRequired,
-	summary: PropTypes.object.isRequired
+	dataFilter: PropTypes.string,
+	summary: PropTypes.object
 }
 
 processData.propTypes = {
-	confirmedCases: PropTypes.array.isRequired
+	confirmedCases: PropTypes.array
 }
