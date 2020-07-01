@@ -1,5 +1,6 @@
 import React from 'react'
 import { Wrapper, Label, Data } from './style'
+import PropTypes from 'prop-types'
 
 const GlobalSummaryData = ({summary}) => {
 	return (
@@ -19,6 +20,10 @@ const GlobalSummaryData = ({summary}) => {
 				<Data>{summary.Global.TotalRecovered}</Data>
 		</Wrapper>
 	)
+}
+
+GlobalSummaryData.propTypes = {
+	summary: PropTypes.object.isRequired
 }
 
 export default GlobalSummaryData

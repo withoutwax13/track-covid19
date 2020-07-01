@@ -1,6 +1,7 @@
 import React from 'react'
 import Globe from 'react-globe.gl'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { setGlobeFocus } from '../../redux/actions'
 
@@ -39,6 +40,11 @@ const mapStateToProps = (state) => {
 	return {
 		focus: state.globeFocus
 	}
+}
+
+GlobeVisual.propTypes = {
+	focus: PropTypes.object.isRequired,
+	setGlobeFocus: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, { setGlobeFocus })(GlobeVisual)

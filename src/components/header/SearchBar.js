@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types' 
 
 import { setGlobeFocus } from '../../redux/actions'
 import { countriesData as countries } from '../../api/countries'
@@ -72,6 +73,11 @@ const SearchBar = ({children, setGlobeFocus}) => {
 			{countries.map(country=><option value={country.name} key={country.country}>{country.name}</option>)}
 		</Select>
 	)
+}
+
+SearchBar.propTypes = {
+	setGlobeFocus: PropTypes.func.isRequired,
+	children: PropTypes.node.isRequired
 }
 
 export default connect(null, { setGlobeFocus })(SearchBar)

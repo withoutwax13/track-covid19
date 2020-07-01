@@ -1,5 +1,6 @@
 import React from 'react'
 import { Wrapper, Label, Data } from './style'
+import PropTypes from 'prop-types'
 
 const LocalSummaryData = ({summary, focus, loadingLocal, shouldFocus}) => {
 
@@ -34,6 +35,13 @@ const LocalSummaryData = ({summary, focus, loadingLocal, shouldFocus}) => {
 			<Wrapper inactive/>
 		)
 	}
+}
+
+LocalSummaryData.propTypes = {
+	summary: PropTypes.object.isRequired,
+	focus: PropTypes.object.isRequired,
+	loadingLocal: PropTypes.bool.isRequired,
+	shouldFocus: PropTypes.bool
 }
 
 export default LocalSummaryData

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 export const Wrapper = styled.div`
 	display: flex;
@@ -23,3 +24,7 @@ export const Charge = styled.div`
 export const Label = styled.label`
 	margin: auto;
 `
+
+Charge.propTypes = {
+	trigger: PropTypes.bool.isRequired
+}

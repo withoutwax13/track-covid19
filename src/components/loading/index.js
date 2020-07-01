@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Wrapper, Battery, Charge, Label } from './style'
 
-const Loading = ({shouldStop}) => {
+const Loading = () => {
 
 	const [ state, setState ] = React.useState(false)
 

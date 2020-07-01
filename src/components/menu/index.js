@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { toggleMenu } from '../../redux/actions'
 import { StyledNavLinkHeading, StyledNavHeading } from './Heading'
@@ -49,6 +50,15 @@ const mapStateToProps = (state) => {
 	return {
 		status: state.menuStatus
 	}
+}
+
+Wrapper.propTypes = {
+	open: PropTypes.bool.isRequired
+}
+
+Menu.propTypes = {
+	status: PropTypes.bool.isRequired,
+	toggleMenu: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, { toggleMenu })(Menu)

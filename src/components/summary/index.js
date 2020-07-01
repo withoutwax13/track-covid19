@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Loading from '../loading'
 
@@ -59,6 +60,11 @@ const mapStateToProps = (state) => {
 		summary: state.dataSummary,
 		focus: state.globeFocus
 	}
+}
+
+SummaryBox.propTypes = {
+	summary: PropTypes.object.isRequired,
+	focus: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps)(SummaryBox)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import api from './api/api'
 import { fetchDataSummary } from './redux/actions'
@@ -31,9 +32,13 @@ const App = ({fetchDataSummary}) => {
 					<Route exact path='/dashboard' component={Dashboard}/>
 					<Route component={Home}/>
 				</Switch>
-			</Router>
+			</Router>	
 		</div>
 	)
+}
+
+App.propTypes = {
+	fetchDataSummary: PropTypes.func.isRequired
 }
 
 export default connect(null, { fetchDataSummary })(App)

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const IMG = styled.img`
 	margin: 0;
@@ -35,6 +36,14 @@ const Link = styled.a`
     
     }
 `
+
+IMG.propTypes = {
+  src: PropTypes.node.isRequired
+}
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired
+}
 
 export default ({href, src}) => {
 	return (

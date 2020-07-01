@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export const StyledNavLinkHeading = styled(Link)`
 	font-size: 1.0em;
@@ -104,3 +105,11 @@ export const StyledNavHeading = styled.a`
 	  
 	}
 `
+
+StyledNavHeading.propTypes = {
+	color: PropTypes.string
+}
+
+StyledNavLinkHeading.propTypes = {
+	color: PropTypes.string
+}

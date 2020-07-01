@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { FilterWrapper, FilterSelect } from './style'
 
@@ -22,6 +23,10 @@ const Filter = ({handleFilterChange}) => {
 			</FilterSelect>
 		</FilterWrapper>
 	)
+}
+
+Filter.propTypes = {
+	handleFilterChange: PropTypes.func.isRequired
 }
 
 export default Filter

@@ -6,6 +6,7 @@ import { fetchConfirmedRecords } from '../../redux/actions'
 import { FilterWrapper, ChartWrapper, Heading } from './style'
 import Filter from './filter'
 import { getStartEndDates, processData } from './methods'
+import PropTypes from 'prop-types'
 
 const CurveChart = ({fetchConfirmedRecords, summary, focus, confirmedCases}) => {
 
@@ -52,6 +53,13 @@ const mapStateToProps = (state) => {
 		focus: state.globeFocus,
 		confirmedCases: state.confirmedCases
 	}
+}
+
+CurveChart.propTypes = {
+	fetchConfirmedRecords: PropTypes.func.isRequired,
+	summary: PropTypes.object.isRequired,
+	focus: PropTypes.object.isRequired,
+	confirmedCases: PropTypes.array.isRequired
 }
 
 export default connect(mapStateToProps, { fetchConfirmedRecords })(CurveChart)

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export const getStartEndDates = (dataFilter, summary) => {
 	
 	let startDate = {year: '', month: '', day: ''}
@@ -105,4 +107,13 @@ export const processData = (confirmedCases) => {
 		}
 	}
 	return processedData
+}
+
+getStartEndDates.propTypes = {
+	dataFilter: PropTypes.string.isRequired,
+	summary: PropTypes.object.isRequired
+}
+
+processData.propTypes = {
+	confirmedCases: PropTypes.array.isRequired
 }

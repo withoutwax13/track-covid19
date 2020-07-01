@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 export const Wrapper = styled.div`
 	display: flex;
@@ -40,4 +41,12 @@ export const Data = ({children}) => {
 			</Heading>
 		</Wrapper>
 	)
+}
+
+Wrapper.propTypes = {
+	inactive: PropTypes.bool
+}
+
+Data.propTypes = {
+	children: PropTypes.node.isRequired
 }
