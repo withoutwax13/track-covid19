@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { LineChart, Line, YAxis, XAxis, CartesianGrid, Legend } from 'recharts'
+import { LineChart, Line, YAxis, XAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
 
 import { fetchConfirmedRecords } from '../../redux/actions'
 import { FilterWrapper, ChartWrapper, Heading } from './style'
@@ -41,6 +41,7 @@ const CurveChart = ({fetchConfirmedRecords, summary, focus, confirmedCases}) => 
 			  <XAxis dataKey="Date" />
 			  <YAxis type='number' scale='log' domain={[1, 50000]}/>
 			  <Legend />
+			  <Tooltip/>
 			  <Line type="monotone" dataKey="Confirmed Cases" stroke="#8884d8" />
 			</LineChart>
 		</ChartWrapper>
