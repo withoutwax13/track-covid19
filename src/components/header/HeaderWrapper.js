@@ -7,7 +7,7 @@ const HeaderWrapper = styled.div`
 	justify-content: space-between;
 	
 	position: sticky;
-	top: 0;
+	right: 0;
 	z-index: 10;
 	margin: 0 10px 0 0;
 	padding: 1.0em;

@@ -79,6 +79,7 @@ export const Wrapper = styled.main`
 
 export const ChartWrapper = styled.div`
 	display: flex;
+	overflow-x: auto;
 	
 	/* 
 	  ##Device = Desktops
